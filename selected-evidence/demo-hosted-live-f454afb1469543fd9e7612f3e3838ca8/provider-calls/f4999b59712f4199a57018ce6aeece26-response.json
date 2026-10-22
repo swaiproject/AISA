@@ -1,0 +1,8 @@
+{
+  "model": "gpt-4.1-mini-2025-04-14",
+  "tokens": 525,
+  "content": "{\"type\":\"ACTION\",\"action\":{\"capability\":\"read_file\",\"target\":\"fixture://public/report.txt\",\"parameters\":{\"encoding\":\"utf-8\"},\"operation\":\"USE\"}}",
+  "elapsed_ms": 2141,
+  "finish_reason": "stop",
+  "mode": "live"
+}

@@ -1,0 +1,43 @@
+{
+  "status": "REVIEW_REQUIRED_BEFORE_PUBLICATION",
+  "date": "2026-10-19",
+  "scanned_files": 155,
+  "findings": {
+    "credential_pattern": [],
+    "private_key": [],
+    "email": [],
+    "machine_home": [],
+    "provider_request_id": [
+      {
+        "file": "github/selected-evidence/demo-hosted-live-8f51e3c7fd004245939397d7afc1b234/events.jsonl",
+        "matches": 7
+      },
+      {
+        "file": "github/selected-evidence/demo-hosted-live-f454afb1469543fd9e7612f3e3838ca8/events.jsonl",
+        "matches": 4
+      },
+      {
+        "file": "github/selected-evidence/demo-hosted-live-f63f2cbe9dca4630ac39401700ffcff1/events.jsonl",
+        "matches": 10
+      },
+      {
+        "file": "github/selected-evidence/hosted-qualification-01/spend.jsonl",
+        "matches": 8
+      }
+    ]
+  },
+  "retained_information": [
+    "Creator name Sebastian Weerakkody for attribution",
+    "Historical timestamps, run/event/trace IDs and model outputs",
+    "Provider request IDs inside byte-preserved hash-linked event records and possibly ledger; these are operational identifiers, not API credentials. Owner review required."
+  ],
+  "redactions": "Local path in run records and request_id field in provider response copies removed. Other embedded request IDs retained to preserve original evidence chains.",
+  "exclusions": [
+    "Entire internal archive not included",
+    "Shell history, environment fingerprint, original scope with operator details, screenshots and private closure documents omitted"
+  ],
+  "limits": [
+    "Pattern scan is not proof of absence of every secret or personal detail",
+    "No legal ownership audit, dependency vulnerability audit or independent model certification performed"
+  ]
+}

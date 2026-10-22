@@ -1,0 +1,158 @@
+"""One bounded Primary-proposal → controller → Shadow/execution turn."""
+
+from __future__ import annotations
+
+from dataclasses import dataclass
+import json
+from queue import Empty, Queue
+import threading
+from typing import Any, Mapping
+
+from .classification import effective_classification
+from .contracts import ModelProvenance, RunContext
+from .controller import AgentController, ControllerResult
+from .errors import ContractError
+from .model_adapter import ModelAdapterError, PrimaryModelAdapter, PrimaryModelResult, PrimaryProposalError
+
+
+@dataclass(frozen=True)
+class AgentTurnResult:
+    primary: PrimaryModelResult | None
+    controller: ControllerResult
+    primary_error: str | None = None
+
+
+class ModelDrivenAgentLoop:
+    """The model can propose; only the trusted controller can authorize or execute."""
+
+    def __init__(self, primary: PrimaryModelAdapter, controller: AgentController, objective: Mapping[str, Any], primary_deadline_ms: int | None = None) -> None:
+        self._primary = primary
+        self._controller = controller
+        self._objective = objective
+        inferred = getattr(getattr(primary, "endpoint", None), "timeout_ms", 10_000)
+        self._primary_deadline_ms = inferred if primary_deadline_ms is None else primary_deadline_ms
+        if self._primary_deadline_ms <= 0:
+            raise ValueError("primary deadline must be positive")
+
+    def run_turn(
+        self, user_input: str, context: RunContext, input_classification: str, *,
+        proposal_relation: str | None = None, identical_reproposal_count: int = 0,
+    ) -> AgentTurnResult:
+        target_classification = effective_classification(
+            self._objective, input_classification, context.taint_source_resource_ids
+        )
+        try:
+            proposal = self._propose_with_deadline(user_input, context, target_classification)
+        except (ModelAdapterError, ContractError) as exc:
+            provenance = exc.provenance if isinstance(exc, PrimaryProposalError) else None
+            result = self._controller.process(
+                {"primary_adapter_failure": type(exc).__name__}, context, provenance
+            )
+            return AgentTurnResult(None, result, type(exc).__name__)
+        provenance = ModelProvenance(
+            proposal.provider_request_id, proposal.provider_model, proposal.tokens_used,
+            proposal.response_sha256, proposal.elapsed_ms, proposal.finish_reason,
+            proposal.ignored_provider_fields, proposal.additional_result_provenance,
+        )
+        if proposal.output_type == "SUBGOAL":
+            event = self._controller.record_model_subgoal(proposal.declaration_text or "", context, provenance)
+            result = ControllerResult("DECLARED", ("DECLARED",), (event,))
+        elif proposal.output_type == "PERMISSION_REQUEST":
+            event = self._controller.record_permission_request(proposal.declaration_text or "", context, provenance)
+            result = ControllerResult("REQUESTED", ("REQUESTED",), (event,))
+        elif proposal.output_type == "COMPLETION":
+            result = self._controller.complete_response(
+                proposal.completion_text or "", proposal.claimed_criteria, proposal.cited_evidence_ids, context
+            )
+        else:
+            action = proposal.action
+            if action is None:
+                raise ContractError("ACTION output omitted action")
+            result = self._controller.process({
+                "capability": action.capability,
+                "target": action.target,
+                "parameters": dict(action.parameters),
+                "operation": action.operation,
+            }, context, provenance, proposal_relation=proposal_relation,
+                identical_reproposal_count=identical_reproposal_count)
+        return AgentTurnResult(proposal, result)
+
+    def _propose_with_deadline(self, user_input: str, context: RunContext, classification: str) -> PrimaryModelResult:
+        results: Queue[tuple[str, object]] = Queue(maxsize=1)
+
+        def invoke() -> None:
+            try:
+                results.put(("RESULT", self._primary.propose(self._objective, user_input, context, classification)))
+            except BaseException as exc:
+                results.put(("ERROR", exc))
+
+        worker = threading.Thread(target=invoke, name="primary-model-adapter", daemon=True)
+        worker.start()
+        try:
+            kind, value = results.get(timeout=self._primary_deadline_ms / 1000)
+        except Empty as exc:
+            raise ModelAdapterError("Primary model total deadline exceeded") from exc
+        if kind == "ERROR":
+            if isinstance(value, (ModelAdapterError, ContractError)):
+                raise value
+            raise ModelAdapterError(f"Primary adapter failure: {type(value).__name__}")
+        if not isinstance(value, PrimaryModelResult):
+            raise ModelAdapterError("Primary adapter returned an invalid result contract")
+        return value
+
+    def enforce_expired_escalation(self, turn: AgentTurnResult) -> AgentTurnResult:
+        return AgentTurnResult(turn.primary, self._controller.enforce_expired_escalation(turn.controller), turn.primary_error)
+
+    def run_observation_loop(
+        self, user_input: str, context: RunContext, input_classification: str, *, max_turns: int = 4
+    ) -> tuple[AgentTurnResult, ...]:
+        """Run bounded proposal/effect/observation turns through full mediation.
+
+        Every proposal re-enters ``run_turn`` and therefore Tier 1 and any
+        required Tier 2 route.  Tool observations are passive input to the next
+        model turn; they confer no authority.
+        """
+        if max_turns <= 0:
+            raise ValueError("max_turns must be positive")
+        turns: list[AgentTurnResult] = []
+        prompt = user_input
+        current = context
+        for index in range(max_turns):
+            turn_context = RunContext(
+                current.run_id, current.trace_id, current.objective_id,
+                execution_mode=current.execution_mode,
+                decision_epoch=context.decision_epoch + index,
+                supervision_state=current.supervision_state,
+                control_point_id=current.control_point_id,
+                context_taint_state=current.context_taint_state,
+                taint_source_resource_ids=current.taint_source_resource_ids,
+                action_origin="MODEL_PROPOSAL",
+            )
+            turn = self.run_turn(prompt, turn_context, input_classification)
+            turns.append(turn)
+            if turn.controller.final_status == "CHALLENGED":
+                prompt = "CHALLENGE_REPROPOSAL_REQUIRED:" + json.dumps({
+                    "reason": "previous proposal requires revision",
+                    "previous_event_id": turn.controller.events[-1]["trusted_metadata"]["event_id"],
+                }, sort_keys=True, separators=(",", ":"))
+                continue
+            if turn.controller.final_status in {"DECLARED", "REQUESTED"}:
+                prompt = "CONTROL_DECLARATION_RECORDED:continue with an authorized action or completion"
+                continue
+            if turn.controller.final_status in {"COMPLETION_VERIFIED", "EXECUTED"} and turn.primary and turn.primary.output_type == "COMPLETION":
+                return tuple(turns)
+            if turn.controller.final_status != "EXECUTED" or turn.controller.wrapper_result is None:
+                return tuple(turns)
+            current = turn.controller.next_context(turn_context)
+            observed = {
+                "status": turn.controller.wrapper_result.status,
+                "content": turn.controller.wrapper_result.observed_result,
+                "provenance": list(turn.controller.wrapper_result.result_provenance),
+                "evidence_id": turn.controller.events[-1]["trusted_metadata"]["event_id"],
+            }
+            prompt = "TOOL_RESULT_UNTRUSTED_DATA:" + json.dumps(
+                observed, sort_keys=True, separators=(",", ":"), ensure_ascii=True
+            )
+        termination = self._controller.terminate_turn_bound()
+        turns.append(AgentTurnResult(None, termination, "TURN_BOUND_REACHED"))
+        return tuple(turns)

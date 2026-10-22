@@ -1,0 +1,73 @@
+{
+  "policy": "Selected evidence only. Event bytes unchanged. Run file_hashes refer to ORIGINAL artifacts and are not validation hashes for redacted derivatives. Public bytes are in PUBLICATION-MANIFEST.json. Full archive kept privately.",
+  "changes": [
+    {
+      "path": "demo-hosted-live-f454afb1469543fd9e7612f3e3838ca8/provider-calls/6be2f173961d45689cf920b1dcf1d718-response.json",
+      "original_sha256": "d41a7417c2ce6283dccbb3369751c60d846aa49e0ac6115d8541478eef3e45c7",
+      "public_sha256": "2c63a7351e14d272620b787c64442bdc629f582d4429d061bd535c374a7cbc36",
+      "change": "provider response request_id removed"
+    },
+    {
+      "path": "demo-hosted-live-f454afb1469543fd9e7612f3e3838ca8/provider-calls/f4999b59712f4199a57018ce6aeece26-response.json",
+      "original_sha256": "0af4fda5c834bca1e0d8485ba2106ae2ccfa70463925773f99a321b9cd0eea67",
+      "public_sha256": "318f9df8b2c1b2409b0d3f852fe246d87368f835e432733a5e22b17bff7f4473",
+      "change": "provider response request_id removed"
+    },
+    {
+      "path": "demo-hosted-live-f454afb1469543fd9e7612f3e3838ca8/run.json",
+      "original_sha256": "4efba38df26c2d8e2d4fa00ea240ed50a17c51f1b13f9771388bde6dcbaec6b0",
+      "public_sha256": "593a38d9ed52b50753105fc0ce0dd0b80dbeba7a4001c995c9eba02a0d60c623",
+      "change": "machine-local ledger path replaced"
+    },
+    {
+      "path": "demo-hosted-live-8f51e3c7fd004245939397d7afc1b234/provider-calls/2a4b1493907e424fbff98db0f9f18474-response.json",
+      "original_sha256": "18138ba725fa75f7e988fb90faa3c04e4968d2208a32ed671e5d5d296ddc7df0",
+      "public_sha256": "c360b987b70a92ee8f2df310f383858aaa7cb4f62470ecb57f8d45ad9e3eed8f",
+      "change": "provider response request_id removed"
+    },
+    {
+      "path": "demo-hosted-live-8f51e3c7fd004245939397d7afc1b234/provider-calls/46794e82c80b46b0a92e3c7ff9364187-response.json",
+      "original_sha256": "afc794e710f7c5b8c6667d5a001a0aeb672b93dcf6d6f7d164defc93e923fe4b",
+      "public_sha256": "601f1648cbf09bcffa497e7a116767d22c90943bc1d943c5cd674b902a5c806b",
+      "change": "provider response request_id removed"
+    },
+    {
+      "path": "demo-hosted-live-8f51e3c7fd004245939397d7afc1b234/provider-calls/b43acea4b5414189a0342c18814c0fb9-response.json",
+      "original_sha256": "4704849cf04a97f5d91f91bb4702c0f9ba6ad47aea8efbc31c6fa7acb92945d8",
+      "public_sha256": "9f4f946421254a01f6b59a1951ab9d8ac84f26d9e59727b33b76f51fe63aaf9a",
+      "change": "provider response request_id removed"
+    },
+    {
+      "path": "demo-hosted-live-8f51e3c7fd004245939397d7afc1b234/run.json",
+      "original_sha256": "26ac5acdbfe3a50f3e46fa43aabac697c4003f9dabefa0d3d683d14463a972dc",
+      "public_sha256": "b6471800d6b242ab49e7c7bb7e411c140187e14eeca906c1f7f1e43ff1907182",
+      "change": "machine-local ledger path replaced"
+    },
+    {
+      "path": "demo-hosted-live-f63f2cbe9dca4630ac39401700ffcff1/provider-calls/0b00c2ca4446428391f9795b223f9090-response.json",
+      "original_sha256": "38fd8b02f6cf1a44f07d22a935ac1388cc9f8f7ed20da6bc04135bc9e2cd505e",
+      "public_sha256": "8acd25c804fa6fd567f64bbbdb944ea8668e289e77c0db0caf85c82db38eb9a4",
+      "change": "provider response request_id removed"
+    },
+    {
+      "path": "demo-hosted-live-f63f2cbe9dca4630ac39401700ffcff1/provider-calls/33c2decb525642b5a7f2cb5ba58e4279-response.json",
+      "original_sha256": "b10e644832ebbfab27e49cf6db55ac8742cc5359161b002783ad9e71d01be0ed",
+      "public_sha256": "8d9976b6bb297682f340c4daf821fe5575a153327e70e8194db958d53e142f2f",
+      "change": "provider response request_id removed"
+    },
+    {
+      "path": "demo-hosted-live-f63f2cbe9dca4630ac39401700ffcff1/provider-calls/cedd706972924e1ba62e250558ba59cc-response.json",
+      "original_sha256": "b8eb8231b562a0995e85804b095637190e1e67aca106b747c48f09d048000649",
+      "public_sha256": "2a9777242bdbed43f5d959fd91de69a1be934cdab7f1a868ab8384d21df9bf61",
+      "change": "provider response request_id removed"
+    },
+    {
+      "path": "demo-hosted-live-f63f2cbe9dca4630ac39401700ffcff1/run.json",
+      "original_sha256": "6aa3791aab34b5bea3bde170cff27a05689cd0a2c3c6ff3cf0b3e1755048859a",
+      "public_sha256": "dd43ce263001c2611a78af60ea8b47e18218ca3f243616f935db478540f23293",
+      "change": "machine-local ledger path replaced"
+    }
+  ],
+  "original_archive_sha256": "5008ad35106c674c4f980894b59315287453c84df5c7496d0da47f59f0f21e43",
+  "retained_operational_metadata": "Provider request IDs inside original event provenance are retained to preserve hash chains. Owner review required."
+}

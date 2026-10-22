@@ -1,0 +1,8 @@
+{
+  "model": "gpt-4.1-mini-2025-04-14",
+  "tokens": 889,
+  "content": "{\"type\":\"COMPLETION\",\"text\":\"The artificial report indicates that 12 orders were received, out of which 10 have been shipped and 2 are still pending.\",\"claimed_criteria\":[\"report_summarized\"],\"cited_evidence_ids\":[\"evt-78f17b80-f046-4849-809b-99ce7758d544\"]}",
+  "elapsed_ms": 2106,
+  "finish_reason": "stop",
+  "mode": "live"
+}

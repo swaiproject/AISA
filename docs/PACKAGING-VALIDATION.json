@@ -1,0 +1,56 @@
+{
+  "status": "PASS",
+  "python": "3.12.3 (main, Jul 15 2026, 23:46:41) [GCC 13.3.0]",
+  "platform": "linux",
+  "mode": "OFFLINE_ONLY",
+  "credential_removed_from_children": true,
+  "checks": [
+    {
+      "suite": "loop_v0_2",
+      "checks_passed": 14,
+      "status": "PASS"
+    },
+    {
+      "suite": "hosted_v0_3",
+      "checks_passed": 15,
+      "status": "PASS"
+    },
+    {
+      "suite": "continuation_v0_4",
+      "checks_passed": 8,
+      "status": "PASS"
+    },
+    {
+      "suite": "confirmation_v0_5",
+      "checks_passed": 7,
+      "status": "PASS"
+    },
+    {
+      "strict_fixture": "permitted",
+      "status": "PASS"
+    },
+    {
+      "strict_fixture": "blocked",
+      "status": "PASS"
+    },
+    {
+      "strict_fixture": "review",
+      "status": "PASS"
+    },
+    {
+      "strict_fixture": "missing",
+      "status": "PASS"
+    }
+  ],
+  "limits": "No exact historical locked-environment rebuild; no hosted calls or production qualification.",
+  "additional_verification": {
+    "selected_event_chains": 3,
+    "closed_ledger_calls": 8,
+    "spending_nanousd": 17260800,
+    "original_source_bindings": "PASS",
+    "credential_scan": "No matching API-token/private-key patterns",
+    "space_interaction": "Four scripted examples and three historical records checked in JavaScript DOM harness",
+    "space_browser_visual_review": "PENDING \u2014 browser download failed; not claimed as tested",
+    "candidate": "1.0.0-rc1"
+  }
+}

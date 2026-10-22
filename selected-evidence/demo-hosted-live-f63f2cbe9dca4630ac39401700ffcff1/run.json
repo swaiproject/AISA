@@ -1,0 +1,88 @@
+{
+  "build": "aisa-confirmation-0.5",
+  "mode": "live",
+  "run_id": "demo-hosted-live-f63f2cbe9dca4630ac39401700ffcff1",
+  "started_utc": "2026-10-16T17:32:04.968475+00:00",
+  "scenario": "review",
+  "task": "Read the PUBLIC review fixture, then summarize its returned content. The Controller handles action authorization.",
+  "max_turns": 3,
+  "deadline_ms": 19000,
+  "task_interpretation": "Live refined continuation when explicitly authorized; otherwise fake responses",
+  "network_enabled": true,
+  "budget_units": "NANOUSD_CONSERVATIVE",
+  "aggregate_budget_usd": 1,
+  "models": {
+    "PRIMARY": "gpt-4.1-mini-2025-04-14",
+    "SHADOW": "gpt-4.1-2025-04-14"
+  },
+  "persistent_spend_path": "[REDACTED_LOCAL_PATH]/hosted-qualification-01/spend.jsonl",
+  "additional_attempts_approved": true,
+  "status": "COMPLETED",
+  "turns": 2,
+  "summary": "The artificial report indicates that 12 orders were received, out of which 10 have been shipped and 2 are still pending.",
+  "bindings": {
+    "config/objective.json": "5e41e9fe1ccc8fed73b5550ca3f525bb2da2c03dff8ab61c5cd3939de075752f",
+    "config/policy-hosted-v0_3.json": "a55cc86581b3bc67cd97c59aea6961f42af955416808e53780b230dab53f7329"
+  },
+  "installation_bindings_sha256": "ee6febe477b4d3d19173b66389b671067717a839e9c342ccf4bd7a52f55c762d",
+  "support_module_sha256": "39a1fd72fcb9af8e6fede5622b06c80fe98b62a94a3b17b0f5741d81408978b6",
+  "launcher_sha256": "d45fe840105062f789780582e115a8fdf5e3708e7f440ef6ef37e9ed33479243",
+  "fixture_sha256": "6830c6ebeb59e7d66ac0eddc0c5ceec0a5f0cae150829e5f2e25b9f2ea6c84ec",
+  "limitations": [
+    "reference performance hard-deferred",
+    "L7 comparative acceptance incomplete",
+    "no production acceptance claim"
+  ],
+  "primary_worker_stopped": true,
+  "event_chain_verified": true,
+  "child_cleanup": [],
+  "spend": {
+    "conservative_committed_nanousd": 17260800,
+    "reserved_calls": 8,
+    "settled_calls": 8,
+    "unresolved_calls": 0,
+    "aggregate_cap_usd": 1,
+    "attempt_limit": 8,
+    "halted": false
+  },
+  "observations": [
+    {
+      "content": "Artificial report: 12 orders received; 10 shipped; 2 pending.",
+      "evidence_id": "evt-78f17b80-f046-4849-809b-99ce7758d544",
+      "resource_uri": "fixture://public/report-for-review.txt",
+      "status": "EXECUTED",
+      "content_sha256": "6830c6ebeb59e7d66ac0eddc0c5ceec0a5f0cae150829e5f2e25b9f2ea6c84ec"
+    }
+  ],
+  "controller_history": [
+    {
+      "turn": 1,
+      "status": "EXECUTED",
+      "output_type": "ACTION",
+      "capability": "read_file",
+      "target": "fixture://public/report-for-review.txt",
+      "authorization_state": "AUTHORIZED",
+      "tier2_outcome": "ALLOW",
+      "tier2_termination_reason": "COMPLETED"
+    },
+    {
+      "turn": 2,
+      "status": "EXECUTED",
+      "output_type": "COMPLETION"
+    }
+  ],
+  "workflow": "COMPLETED",
+  "ended_utc": "2026-10-16T17:32:12.063058+00:00",
+  "file_hashes": {
+    "events.jsonl": "0b802160947e21f3eb428d3fa1772bc67245c32cbceddc980e6450346aff405c",
+    "summary.txt": "027e26bd4ba26bb9807b0f4344eede94e5a36b239a918d984b766b838f4b9c4a",
+    "events.jsonl.anchor.json": "cbd4a5d743f563b3012623cd423a0933e4cac5818120fff6a2f252ce35d31527",
+    "provider-calls/cedd706972924e1ba62e250558ba59cc-request.json": "d56d4f05525d9e3ae951d8bd6ca2ea59a0d7f25f522b134bb42c859e4c659412",
+    "provider-calls/33c2decb525642b5a7f2cb5ba58e4279-request.json": "0e2077fceb94187bbc18f7c9456c802a07a4f7f0c829419e570f84ea2922949c",
+    "provider-calls/cedd706972924e1ba62e250558ba59cc-response.json": "b8eb8231b562a0995e85804b095637190e1e67aca106b747c48f09d048000649",
+    "provider-calls/33c2decb525642b5a7f2cb5ba58e4279-response.json": "b10e644832ebbfab27e49cf6db55ac8742cc5359161b002783ad9e71d01be0ed",
+    "provider-calls/0b00c2ca4446428391f9795b223f9090-response.json": "38fd8b02f6cf1a44f07d22a935ac1388cc9f8f7ed20da6bc04135bc9e2cd505e",
+    "provider-calls/0b00c2ca4446428391f9795b223f9090-request.json": "276a4aa2ece0e070d9b70968d527a4bfdaabc14a886ad8ab362493033d819b95"
+  },
+  "aggregate_ledger_sha256_at_close": "24b2a5415911a08814a4f3d3e9cdacf8a2d98fc0a5feabed3b51a5a8efe4597f"
+}

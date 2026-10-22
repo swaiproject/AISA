@@ -1,0 +1,46 @@
+{
+  "policy_id": "POLICY-AISA-DEMO-HOSTED-QUALIFICATION",
+  "version": "0.3",
+  "classification_risk": {
+    "PUBLIC": "LOW",
+    "INTERNAL": "MEDIUM",
+    "SENSITIVE": "HIGH",
+    "RESTRICTED": "CRITICAL"
+  },
+  "capability_risk": {
+    "read_file": "LOW",
+    "write_summary": "HIGH",
+    "context_write": "MEDIUM",
+    "delete_file": "HIGH",
+    "network_request": "HIGH",
+    "credential_use": "CRITICAL"
+  },
+  "unknown_capability_risk": "HIGH",
+  "risk_routes": {
+    "LOW": "NONE",
+    "MEDIUM": "SYNCHRONOUS",
+    "HIGH": "SYNCHRONOUS",
+    "CRITICAL": "SYNCHRONOUS"
+  },
+  "tier2_fail_safe": {
+    "LOW": "CHALLENGE",
+    "MEDIUM": "ESCALATE",
+    "HIGH": "BLOCK",
+    "CRITICAL": "BLOCK"
+  },
+  "shadow_budgets": {
+    "time_ms": 20000,
+    "tokens": 8192,
+    "worker_startup_ms": 5000,
+    "worker_cleanup_ms": 1500
+  },
+  "tier1_rules": {
+    "ambiguous_targets": [
+      "fixture://public/report-for-review.txt"
+    ],
+    "alias_rules": [],
+    "sequence_rules": []
+  },
+  "adapter_error_threshold": 3,
+  "escalation_deadline_ms": 5000
+}

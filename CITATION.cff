@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "Please cite this software using the metadata below. Publication candidate; DOI and public URL will be added after release."
+title: "AISA: A Trusted Controller for Supervising AI Agent Actions — A Proof of Concept"
+type: software
+version: 1.0.0-rc1
+authors:
+  - family-names: Weerakkody
+    given-names: Sebastian
+abstract: "A proof of concept combining a trusted Controller, policy checks, a model-based Shadow review, capability brokering and evidence recording for bounded agent actions. Qualified demonstration closure; full formal acceptance incomplete."
+keywords:
+  - AI agents
+  - action authorization
+  - trusted controller
+  - proof of concept
+# Licence, release date, repository URL and DOI deliberately omitted pending publication decisions.

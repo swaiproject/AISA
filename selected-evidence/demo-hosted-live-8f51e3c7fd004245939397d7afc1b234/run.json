@@ -1,0 +1,66 @@
+{
+  "build": "aisa-hosted-integration-0.3",
+  "mode": "live",
+  "run_id": "demo-hosted-live-8f51e3c7fd004245939397d7afc1b234",
+  "started_utc": "2026-10-16T17:09:22.982237+00:00",
+  "scenario": "review",
+  "task": "Read the review fixture and summarize it after approval.",
+  "max_turns": 3,
+  "deadline_ms": 19000,
+  "task_interpretation": "Hosted Primary in live mode; fake provider transport in mock mode",
+  "network_enabled": true,
+  "budget_units": "NANOUSD_CONSERVATIVE",
+  "aggregate_budget_usd": 1,
+  "models": {
+    "PRIMARY": "gpt-4.1-mini-2025-04-14",
+    "SHADOW": "gpt-4.1-2025-04-14"
+  },
+  "persistent_spend_path": "[REDACTED_LOCAL_PATH]/hosted-qualification-01/spend.jsonl",
+  "paid_call_approval_flags": true,
+  "status": "REQUESTED",
+  "turns": 2,
+  "summary": null,
+  "bindings": {
+    "config/objective.json": "5e41e9fe1ccc8fed73b5550ca3f525bb2da2c03dff8ab61c5cd3939de075752f",
+    "config/policy-hosted-v0_3.json": "a55cc86581b3bc67cd97c59aea6961f42af955416808e53780b230dab53f7329"
+  },
+  "installation_bindings_sha256": "ff8771957d0dde003bcd59d54da77056fbe8674878715842f4d83d1faf0b34e6",
+  "support_module_sha256": "df2c05aa3fc03a44ecb72650b0e8071c19283ddc41ea1136f08ac4422d9a6295",
+  "launcher_sha256": "0f8c8c9fe1b6557dfb8f8ab23caeefac03705cd0378fd0384696bbc49ec9412a",
+  "fixture_sha256": "6830c6ebeb59e7d66ac0eddc0c5ceec0a5f0cae150829e5f2e25b9f2ea6c84ec",
+  "limitations": [
+    "reference performance hard-deferred",
+    "L7 comparative acceptance incomplete",
+    "no production acceptance claim"
+  ],
+  "primary_worker_stopped": true,
+  "event_chain_verified": true,
+  "child_cleanup": [],
+  "spend": {
+    "conservative_committed_nanousd": 9220800,
+    "reserved_calls": 5,
+    "settled_calls": 5,
+    "unresolved_calls": 0,
+    "aggregate_cap_usd": 1,
+    "attempt_limit": 6,
+    "halted": false
+  },
+  "observations": [
+    {
+      "content": "Artificial report: 12 orders received; 10 shipped; 2 pending.",
+      "evidence_id": "evt-35585eec-146d-4e72-8b17-ccba16911094"
+    }
+  ],
+  "ended_utc": "2026-10-16T17:09:28.840103+00:00",
+  "file_hashes": {
+    "events.jsonl": "5a202dbaf0c5fc6abdd571e7e7ecd2ba4d117a956a8f6098a9cd616af667134e",
+    "events.jsonl.anchor.json": "be9c27b519e32b59894713e99f049173119772293a1644577e16f80e1cb018da",
+    "provider-calls/46794e82c80b46b0a92e3c7ff9364187-request.json": "508ea0244c7323753ee2c1a2b9643b59f1459750dd006ba3cbe53f81c9e6ad0d",
+    "provider-calls/46794e82c80b46b0a92e3c7ff9364187-response.json": "afc794e710f7c5b8c6667d5a001a0aeb672b93dcf6d6f7d164defc93e923fe4b",
+    "provider-calls/2a4b1493907e424fbff98db0f9f18474-response.json": "18138ba725fa75f7e988fb90faa3c04e4968d2208a32ed671e5d5d296ddc7df0",
+    "provider-calls/b43acea4b5414189a0342c18814c0fb9-request.json": "1e2dd28d76b83fdd7a56976b4aecb89d1c2190147e34b50c79f3142b7aeabdbe",
+    "provider-calls/b43acea4b5414189a0342c18814c0fb9-response.json": "4704849cf04a97f5d91f91bb4702c0f9ba6ad47aea8efbc31c6fa7acb92945d8",
+    "provider-calls/2a4b1493907e424fbff98db0f9f18474-request.json": "01d5e8619ee74e1dff3abbca58ef88e60c1b9579488f89968f69e2e1408866b9"
+  },
+  "aggregate_ledger_sha256_at_close": "c70ed3eca87bf2156d2c1dc075a1199efe621b88ddb3de760cc2e54e8bbf0765"
+}

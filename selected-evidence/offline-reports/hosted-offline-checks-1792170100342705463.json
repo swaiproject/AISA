@@ -1,0 +1,67 @@
+{
+  "status": "PASS",
+  "network_calls": 0,
+  "checks": [
+    {
+      "case": "preflight-no-network",
+      "status": "PASS"
+    },
+    {
+      "case": "live-approval-gate",
+      "status": "PASS"
+    },
+    {
+      "case": "primary-process-deadline-cleanup",
+      "status": "PASS"
+    },
+    {
+      "case": "mock-summary-actual-adapter-contracts",
+      "status": "PASS"
+    },
+    {
+      "case": "mock-review-actual-adapter-contracts",
+      "status": "PASS"
+    },
+    {
+      "case": "persistent-settlement",
+      "status": "PASS"
+    },
+    {
+      "case": "uncertain-charge-retained",
+      "status": "PASS"
+    },
+    {
+      "case": "overrun-not-refunded",
+      "status": "PASS"
+    },
+    {
+      "case": "aggregate-cap",
+      "status": "PASS"
+    },
+    {
+      "case": "atomic-six-call-limit",
+      "status": "PASS"
+    },
+    {
+      "case": "ledger-tamper-rejected",
+      "status": "PASS"
+    },
+    {
+      "case": "configuration-binding-gate",
+      "status": "PASS"
+    },
+    {
+      "case": "provider-failure-keeps-reservation",
+      "status": "PASS"
+    },
+    {
+      "case": "stop-before-provider",
+      "status": "PASS"
+    },
+    {
+      "case": "provider-overrun-halts-campaign",
+      "status": "PASS"
+    }
+  ],
+  "note": "Fake provider responses; account access and live suitability NOT established."
+}

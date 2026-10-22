@@ -1,0 +1,5 @@
+{
+  "tier1_required": ["T1_OBJ", "T1_CAP", "T1_TGT", "T1_PAR", "T1_DAT", "T1_CRD", "T1_SEQ", "T1_SCH", "T1_INT", "T1_ISO", "T1_CMP"],
+  "tier2_semantic_required": ["T2_SCP", "T2_TRJ", "T2_CRD", "T2_EXF", "T2_CTX", "T2_XAG", "T2_FAB", "T2_INJ", "T2_EVD"],
+  "tier2_adapter_required": ["T2_SHD_TIMEOUT", "T2_SHD_TOKEN_EXHAUSTED", "T2_SHD_SCHEMA_FAILURE", "T2_SHD_ADAPTER_FAILURE"]
+}

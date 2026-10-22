@@ -1,0 +1,18 @@
+{
+  "lock_version": "0.3.1",
+  "created_utc": "2026-09-20T00:00:00Z",
+  "status": "READY",
+  "test_plan_declared_inputs": {
+    "primary_specification": "0.2 Amendment 2",
+    "event_schema": "0.2 Amendment 1",
+    "architecture_specification": "0.2 Amendment 2",
+    "shadow_specification": "0.2"
+  },
+  "artifacts": [
+    {"role":"primary_specification","file_name":"Primary_AI_Agent_System_Specification_v0.2_Development_Baseline_Amendment_2.docx","library_file_id":"libfile_0522158c04ac8191a18f5c24623d3b01","library_version":"2","content_identity":"0.2 Amendment 2","document_control":{"Version":"0.2","Status":"Development Baseline - Amendment 2"},"sha256":"e31dd5cfcb0893621c7ef6a0376c0927032ecae91908a8af311e18a0e9d74327"},
+    {"role":"event_schema","file_name":"Primary_Agent_Event_Schema_v0.2_Amendment_1.json","library_file_id":"libfile_2c712d2c2ad081918fc6c4ec46a35107","library_version":"0","content_identity":"0.2 Amendment 1","document_control":{"schema_version":"0.2.1","title":"Primary Agent Event Schema v0.2 Amendment 1"},"sha256":"c5bcf189b873e919bea6549f0e2ed84c243f32abb7017a7ac2b47b9966466a70"},
+    {"role":"architecture_specification","file_name":"PoC_Architecture_and_Design_Specification_v0.2_Design_Baseline_Amendment_2.docx","library_file_id":"libfile_8fdb88f8b8d481919e1514a34c5b0daa","library_version":"2","content_identity":"0.2 Amendment 2","document_control":{"Version":"0.2 Amendment 2","Status":"Amended Design Baseline"},"sha256":"638bc82f3533018fe8a4b05f3e1057dac0510e85177b96bff3f2d14daf758949"},
+    {"role":"shadow_specification","file_name":"AI_Shadow_Agent_Specification_v0.2.docx","library_file_id":"libfile_0d053bdefb5081918adb070c7733e1c6","library_version":"2","content_identity":"0.2","document_control":{"Version":"0.2","Status":"Final Baseline"},"sha256":"85c261844e47906fa0e09d5fced6dc0f3229b7c76e90d0bbbfa09d8c9ea43dee"},
+    {"role":"test_plan","file_name":"PoC_Test_Plan_v0.3_Amendment_3.docx","library_file_id":"libfile_b31b99b189b881918505178265ee0ad8","library_version":"0","content_identity":"0.3 Amendment 3","document_control":{"Version":"0.3 Amendment 3","Status":"Verification Baseline"},"sha256":"d1b52d49f9fda80589154e3d6cb8a5a3c55c956ddaf8ab11e9cc7d4bb9161656"}
+  ]
+}

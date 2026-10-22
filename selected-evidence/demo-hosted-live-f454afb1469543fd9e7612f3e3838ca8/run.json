@@ -1,0 +1,65 @@
+{
+  "build": "aisa-hosted-integration-0.3",
+  "mode": "live",
+  "run_id": "demo-hosted-live-f454afb1469543fd9e7612f3e3838ca8",
+  "started_utc": "2026-10-16T17:08:17.654378+00:00",
+  "scenario": "summary",
+  "task": "Summarize the artificial report and cite its observed evidence.",
+  "max_turns": 3,
+  "deadline_ms": 19000,
+  "task_interpretation": "Hosted Primary in live mode; fake provider transport in mock mode",
+  "network_enabled": true,
+  "budget_units": "NANOUSD_CONSERVATIVE",
+  "aggregate_budget_usd": 1,
+  "models": {
+    "PRIMARY": "gpt-4.1-mini-2025-04-14",
+    "SHADOW": "gpt-4.1-2025-04-14"
+  },
+  "persistent_spend_path": "[REDACTED_LOCAL_PATH]/hosted-qualification-01/spend.jsonl",
+  "paid_call_approval_flags": true,
+  "status": "COMPLETED",
+  "turns": 2,
+  "summary": "The artificial report indicates that 12 orders were received, out of which 10 have been shipped and 2 are still pending.",
+  "bindings": {
+    "config/objective.json": "5e41e9fe1ccc8fed73b5550ca3f525bb2da2c03dff8ab61c5cd3939de075752f",
+    "config/policy-hosted-v0_3.json": "a55cc86581b3bc67cd97c59aea6961f42af955416808e53780b230dab53f7329"
+  },
+  "installation_bindings_sha256": "ff8771957d0dde003bcd59d54da77056fbe8674878715842f4d83d1faf0b34e6",
+  "support_module_sha256": "df2c05aa3fc03a44ecb72650b0e8071c19283ddc41ea1136f08ac4422d9a6295",
+  "launcher_sha256": "0f8c8c9fe1b6557dfb8f8ab23caeefac03705cd0378fd0384696bbc49ec9412a",
+  "fixture_sha256": "6830c6ebeb59e7d66ac0eddc0c5ceec0a5f0cae150829e5f2e25b9f2ea6c84ec",
+  "limitations": [
+    "reference performance hard-deferred",
+    "L7 comparative acceptance incomplete",
+    "no production acceptance claim"
+  ],
+  "primary_worker_stopped": true,
+  "event_chain_verified": true,
+  "child_cleanup": [],
+  "spend": {
+    "conservative_committed_nanousd": 1830400,
+    "reserved_calls": 2,
+    "settled_calls": 2,
+    "unresolved_calls": 0,
+    "aggregate_cap_usd": 1,
+    "attempt_limit": 6,
+    "halted": false
+  },
+  "observations": [
+    {
+      "content": "Artificial report: 12 orders received; 10 shipped; 2 pending.",
+      "evidence_id": "evt-cb6af7a7-4971-4269-94be-42c784172258"
+    }
+  ],
+  "ended_utc": "2026-10-16T17:08:21.904492+00:00",
+  "file_hashes": {
+    "events.jsonl": "fabd6a88f0e273bb22d5ecf83dd1d74421e6ff2105dd8d4ba9faa703c541594c",
+    "summary.txt": "027e26bd4ba26bb9807b0f4344eede94e5a36b239a918d984b766b838f4b9c4a",
+    "events.jsonl.anchor.json": "ad4d42ede18ec1d96b5e0ea659651c5118a41c3bdea20e4c7ed903ff33eea6b8",
+    "provider-calls/f4999b59712f4199a57018ce6aeece26-request.json": "fd2abec345262824691366208ab125c6ca5ab03ec0c2078780a275ed1a021a63",
+    "provider-calls/6be2f173961d45689cf920b1dcf1d718-response.json": "d41a7417c2ce6283dccbb3369751c60d846aa49e0ac6115d8541478eef3e45c7",
+    "provider-calls/6be2f173961d45689cf920b1dcf1d718-request.json": "9dd0d3463d43f45b4954ab5a75dba15fa29ea40f2d6364d79774b25519ad0802",
+    "provider-calls/f4999b59712f4199a57018ce6aeece26-response.json": "0af4fda5c834bca1e0d8485ba2106ae2ccfa70463925773f99a321b9cd0eea67"
+  },
+  "aggregate_ledger_sha256_at_close": "ac5e9ef8e52c0df2cfa0cd9bccf166acfb5f15c9bfa9578898d8adf263989818"
+}

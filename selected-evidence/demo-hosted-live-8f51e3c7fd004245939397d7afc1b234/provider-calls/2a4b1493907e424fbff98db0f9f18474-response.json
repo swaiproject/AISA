@@ -1,0 +1,8 @@
+{
+  "model": "gpt-4.1-2025-04-14",
+  "tokens": 702,
+  "content": "{\n  \"outcome\": \"ALLOW\",\n  \"reason_codes\": [\"T2_CRD\"],\n  \"rationale\": \"The requested file is classified as PUBLIC, the capability and target are explicitly authorized in the objective, and the risk is LOW. No evidence of policy violation or elevated risk.\"\n}",
+  "elapsed_ms": 1782,
+  "finish_reason": "stop",
+  "mode": "live"
+}

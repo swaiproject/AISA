@@ -1,0 +1,77 @@
+{
+  "mode": "OFFLINE_STUBS",
+  "paid_calls": 0,
+  "checks": [
+    {
+      "case": "summary",
+      "status": "PASS",
+      "run_id": "demo-loop-f2b7ecbd46ab4ab8ae7f445926fafcb9"
+    },
+    {
+      "case": "changed-content",
+      "status": "PASS",
+      "run_id": "demo-loop-8f70cbb56ad34ee8a3b877cb7dc8f91d"
+    },
+    {
+      "case": "missing",
+      "status": "PASS",
+      "run_id": "demo-loop-93486bf801a3477a8e78243f95fcaf3d"
+    },
+    {
+      "case": "blocked",
+      "status": "PASS",
+      "run_id": "demo-loop-1aaf58ec82404b8da9c69f2b6038da66"
+    },
+    {
+      "case": "shadow-reservation",
+      "status": "PASS",
+      "run_id": "demo-loop-1e90f91fdec845a2b1bd119c9bfde428"
+    },
+    {
+      "case": "turn-limit",
+      "status": "PASS",
+      "run_id": "demo-loop-840d1733aea14c8ea3c4e833fb3ca827"
+    },
+    {
+      "case": "zero-budget",
+      "status": "PASS",
+      "run_id": "demo-loop-84934aa438004d61935e92267a62533a"
+    },
+    {
+      "case": "second-call-budget",
+      "status": "PASS",
+      "run_id": "demo-loop-e00d6504ef854b42afbf19be5abf4ec0"
+    },
+    {
+      "case": "shadow-budget",
+      "status": "PASS",
+      "run_id": "demo-loop-8ebc5d80866f4bdd9c3532c460c91d13"
+    },
+    {
+      "case": "adapter-error",
+      "status": "PASS",
+      "run_id": "demo-loop-59a5cff111e64d3b9cd5b82a3046c388"
+    },
+    {
+      "case": "bad-summary",
+      "status": "PASS",
+      "run_id": "demo-loop-74008e1312d3470ebd7d0d43f49e0aa0"
+    },
+    {
+      "case": "deadline",
+      "status": "PASS",
+      "run_id": "demo-loop-137246ad08da4a22b466f73688ceb157"
+    },
+    {
+      "case": "stop-before-call",
+      "status": "PASS",
+      "run_id": "demo-loop-40520733fe464c61b518114f38fc2d58"
+    },
+    {
+      "case": "interrupt-during-call",
+      "status": "PASS",
+      "run_id": "demo-loop-f62555376872419e9ca2e2875bf01e43"
+    }
+  ],
+  "status": "PASS"
+}

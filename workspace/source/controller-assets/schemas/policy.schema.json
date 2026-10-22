@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema", "type": "object", "additionalProperties": false,
+  "required": ["policy_id", "version", "classification_risk", "capability_risk", "unknown_capability_risk", "risk_routes", "tier2_fail_safe", "shadow_budgets", "tier1_rules", "adapter_error_threshold", "escalation_deadline_ms"],
+  "properties": {
+    "policy_id": {"type": "string", "minLength": 1}, "version": {"type": "string", "minLength": 1},
+    "classification_risk": {"type": "object", "additionalProperties": false, "required": ["PUBLIC", "INTERNAL", "SENSITIVE", "RESTRICTED"], "properties": {"PUBLIC": {"enum": ["LOW", "MEDIUM", "HIGH", "CRITICAL"]}, "INTERNAL": {"enum": ["LOW", "MEDIUM", "HIGH", "CRITICAL"]}, "SENSITIVE": {"enum": ["LOW", "MEDIUM", "HIGH", "CRITICAL"]}, "RESTRICTED": {"enum": ["LOW", "MEDIUM", "HIGH", "CRITICAL"]}}},
+    "capability_risk": {"type": "object", "additionalProperties": {"enum": ["LOW", "MEDIUM", "HIGH", "CRITICAL"]}},
+    "unknown_capability_risk": {"enum": ["LOW", "MEDIUM", "HIGH", "CRITICAL"]},
+    "risk_routes": {"type": "object", "additionalProperties": false, "required": ["LOW", "MEDIUM", "HIGH", "CRITICAL"], "properties": {"LOW": {"enum": ["NONE", "ASYNCHRONOUS", "SYNCHRONOUS"]}, "MEDIUM": {"enum": ["NONE", "ASYNCHRONOUS", "SYNCHRONOUS"]}, "HIGH": {"enum": ["NONE", "ASYNCHRONOUS", "SYNCHRONOUS"]}, "CRITICAL": {"enum": ["NONE", "ASYNCHRONOUS", "SYNCHRONOUS"]}}},
+    "tier2_fail_safe": {"type": "object", "additionalProperties": false, "required": ["LOW", "MEDIUM", "HIGH", "CRITICAL"], "properties": {"LOW": {"enum": ["CHALLENGE", "BLOCK", "ESCALATE"]}, "MEDIUM": {"enum": ["CHALLENGE", "BLOCK", "ESCALATE"]}, "HIGH": {"enum": ["CHALLENGE", "BLOCK", "ESCALATE"]}, "CRITICAL": {"enum": ["CHALLENGE", "BLOCK", "ESCALATE"]}}},
+    "shadow_budgets": {"type": "object", "additionalProperties": false, "required": ["time_ms", "tokens", "worker_startup_ms", "worker_cleanup_ms"], "properties": {"time_ms": {"type": "integer", "minimum": 1}, "tokens": {"type": "integer", "minimum": 1}, "worker_startup_ms": {"type": "integer", "minimum": 1}, "worker_cleanup_ms": {"type": "integer", "minimum": 1}}},
+    "tier1_rules": {"type": "object", "additionalProperties": false, "required": ["ambiguous_targets", "alias_rules", "sequence_rules"], "properties": {"ambiguous_targets": {"type": "array", "uniqueItems": true, "items": {"type": "string"}}, "alias_rules": {"type": "array", "items": {"type": "object"}}, "sequence_rules": {"type": "array", "items": {"type": "object"}}}},
+    "adapter_error_threshold": {"type": "integer", "minimum": 1},
+    "escalation_deadline_ms": {"type": "integer", "minimum": 1}
+  }
+}

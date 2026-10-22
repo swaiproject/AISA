@@ -1,0 +1,40 @@
+{
+  "status": "PASS",
+  "mode": "OFFLINE_FAKE_PROVIDER",
+  "paid_calls": 0,
+  "checks": [
+    {
+      "case": "live-mode-rejected",
+      "status": "PASS"
+    },
+    {
+      "case": "post-read-task-content-and-controller-state-retained",
+      "status": "PASS"
+    },
+    {
+      "case": "prompt-limits-state-to-past-execution",
+      "status": "PASS"
+    },
+    {
+      "case": "reviewed-read-summary-released-through-cp10",
+      "status": "PASS"
+    },
+    {
+      "case": "summary-follows-changed-observed-content",
+      "status": "PASS"
+    },
+    {
+      "case": "permission-request-still-stops-no-auto-grant-or-retry",
+      "status": "PASS"
+    },
+    {
+      "case": "turn-bound-still-enforced",
+      "status": "PASS"
+    },
+    {
+      "case": "live-campaign-ledger-unchanged",
+      "status": "PASS"
+    }
+  ],
+  "limitation": "Offline checks cannot establish that a live model will stop requesting redundant permission."
+}

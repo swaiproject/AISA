@@ -1,0 +1,2 @@
+jsonschema==4.23.0
+# Minimal direct runtime dependency. Full historical environment: requirements-test.lock

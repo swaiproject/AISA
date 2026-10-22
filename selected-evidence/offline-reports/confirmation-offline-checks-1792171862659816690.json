@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "network_calls": 0,
+  "checks": [
+    {
+      "case": "explicit-extension-approval-required",
+      "status": "PASS"
+    },
+    {
+      "case": "review-to-summary-with-three-mock-calls",
+      "status": "PASS"
+    },
+    {
+      "case": "permission-hold-retained",
+      "status": "PASS"
+    },
+    {
+      "case": "extension-appends-preserves-prior-cost-and-five-attempts",
+      "status": "PASS"
+    },
+    {
+      "case": "three-additional-attempts-only-dollar-cap-unchanged",
+      "status": "PASS"
+    },
+    {
+      "case": "old-live-executor-rejects-extended-campaign",
+      "status": "PASS"
+    },
+    {
+      "case": "actual-live-ledger-unchanged-offline",
+      "status": "PASS"
+    }
+  ]
+}

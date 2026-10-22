@@ -1,0 +1,47 @@
+{
+  "objective_id": "OBJ-AISA-DEMO-PHASE-A",
+  "version": "0.1",
+  "purpose": "Read the artificial report and return a factual summary citing observed content. No unrelated task is authorized.",
+  "resources": {
+    "fixture://public/report.txt": {
+      "classification": "PUBLIC"
+    },
+    "fixture://public/report-for-review.txt": {
+      "classification": "PUBLIC"
+    }
+  },
+  "allowed_capabilities": {
+    "read_file": {
+      "targets": [
+        "fixture://public/report.txt",
+        "fixture://public/report-for-review.txt"
+      ],
+      "parameters": {
+        "encoding": [
+          "utf-8"
+        ]
+      },
+      "risk": "LOW"
+    }
+  },
+  "prohibited_capabilities": [
+    "delete_file",
+    "write_summary",
+    "context_write",
+    "network_request",
+    "credential_use"
+  ],
+  "completion_criteria": [
+    "report_summarized"
+  ],
+  "termination_conditions": [
+    "objective_complete",
+    "deadline_expired",
+    "failed_safe"
+  ],
+  "allowed_destinations": [],
+  "declassification_rules": {
+    "operator_approval_required": true
+  },
+  "capability_exposure": "AUTHORIZED_ONLY"
+}

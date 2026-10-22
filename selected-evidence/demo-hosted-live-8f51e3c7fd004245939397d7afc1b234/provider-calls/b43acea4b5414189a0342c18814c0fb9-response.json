@@ -1,0 +1,8 @@
+{
+  "model": "gpt-4.1-mini-2025-04-14",
+  "tokens": 582,
+  "content": "{\"type\":\"PERMISSION_REQUEST\",\"text\":\"Requesting operator approval to read fixture://public/report-for-review.txt for summarization as per objective OBJ-AISA-DEMO-PHASE-A.\"}",
+  "elapsed_ms": 1314,
+  "finish_reason": "stop",
+  "mode": "live"
+}

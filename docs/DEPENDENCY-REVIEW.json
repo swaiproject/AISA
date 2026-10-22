@@ -1,0 +1,148 @@
+{
+  "status": "PARTIAL \u2014 runtime metadata checked; historical development dependencies require owner review",
+  "bundled_third_party_packages": false,
+  "dependencies": [
+    {
+      "name": "attrs",
+      "historical_version": "26.1.0",
+      "installed_review_version": "26.1.0",
+      "metadata_license": "MIT",
+      "status": "METADATA_ONLY_NOT_RIGHTS_CERTIFICATION"
+    },
+    {
+      "name": "click",
+      "historical_version": "8.5.0",
+      "status": "NOT_INSTALLED_METADATA_NOT_REVIEWED"
+    },
+    {
+      "name": "hypothesis",
+      "historical_version": "6.127.5",
+      "status": "NOT_INSTALLED_METADATA_NOT_REVIEWED"
+    },
+    {
+      "name": "iniconfig",
+      "historical_version": "2.3.0",
+      "status": "NOT_INSTALLED_METADATA_NOT_REVIEWED"
+    },
+    {
+      "name": "jsonschema",
+      "historical_version": "4.23.0",
+      "installed_review_version": "4.23.0",
+      "metadata_license": "MIT",
+      "status": "METADATA_ONLY_NOT_RIGHTS_CERTIFICATION"
+    },
+    {
+      "name": "jsonschema-specifications",
+      "historical_version": "2025.9.1",
+      "installed_review_version": "2025.9.1",
+      "metadata_license": "MIT",
+      "status": "METADATA_ONLY_NOT_RIGHTS_CERTIFICATION"
+    },
+    {
+      "name": "junit-xml",
+      "historical_version": "1.8",
+      "status": "NOT_INSTALLED_METADATA_NOT_REVIEWED"
+    },
+    {
+      "name": "linkify-it-py",
+      "historical_version": "2.2.0",
+      "status": "NOT_INSTALLED_METADATA_NOT_REVIEWED"
+    },
+    {
+      "name": "markdown-it-py",
+      "historical_version": "4.2.0",
+      "status": "NOT_INSTALLED_METADATA_NOT_REVIEWED"
+    },
+    {
+      "name": "mdit-py-plugins",
+      "historical_version": "0.6.1",
+      "status": "NOT_INSTALLED_METADATA_NOT_REVIEWED"
+    },
+    {
+      "name": "mdurl",
+      "historical_version": "0.1.2",
+      "status": "NOT_INSTALLED_METADATA_NOT_REVIEWED"
+    },
+    {
+      "name": "mutmut",
+      "historical_version": "3.2.3",
+      "status": "NOT_INSTALLED_METADATA_NOT_REVIEWED"
+    },
+    {
+      "name": "packaging",
+      "historical_version": "26.3",
+      "status": "NOT_INSTALLED_METADATA_NOT_REVIEWED"
+    },
+    {
+      "name": "parso",
+      "historical_version": "0.8.7",
+      "status": "NOT_INSTALLED_METADATA_NOT_REVIEWED"
+    },
+    {
+      "name": "platformdirs",
+      "historical_version": "4.12.2",
+      "status": "NOT_INSTALLED_METADATA_NOT_REVIEWED"
+    },
+    {
+      "name": "pluggy",
+      "historical_version": "1.6.0",
+      "status": "NOT_INSTALLED_METADATA_NOT_REVIEWED"
+    },
+    {
+      "name": "pygments",
+      "historical_version": "2.21.0",
+      "status": "NOT_INSTALLED_METADATA_NOT_REVIEWED"
+    },
+    {
+      "name": "pytest",
+      "historical_version": "8.3.5",
+      "status": "NOT_INSTALLED_METADATA_NOT_REVIEWED"
+    },
+    {
+      "name": "referencing",
+      "historical_version": "0.37.0",
+      "installed_review_version": "0.37.0",
+      "metadata_license": "MIT",
+      "status": "METADATA_ONLY_NOT_RIGHTS_CERTIFICATION"
+    },
+    {
+      "name": "rich",
+      "historical_version": "15.0.0",
+      "status": "NOT_INSTALLED_METADATA_NOT_REVIEWED"
+    },
+    {
+      "name": "rpds-py",
+      "historical_version": "2026.6.3",
+      "installed_review_version": "2026.9.1",
+      "metadata_license": "MIT",
+      "status": "METADATA_ONLY_NOT_RIGHTS_CERTIFICATION"
+    },
+    {
+      "name": "setproctitle",
+      "historical_version": "1.3.8",
+      "status": "NOT_INSTALLED_METADATA_NOT_REVIEWED"
+    },
+    {
+      "name": "six",
+      "historical_version": "1.17.0",
+      "status": "NOT_INSTALLED_METADATA_NOT_REVIEWED"
+    },
+    {
+      "name": "sortedcontainers",
+      "historical_version": "2.4.0",
+      "status": "NOT_INSTALLED_METADATA_NOT_REVIEWED"
+    },
+    {
+      "name": "textual",
+      "historical_version": "8.2.8",
+      "status": "NOT_INSTALLED_METADATA_NOT_REVIEWED"
+    },
+    {
+      "name": "typing-extensions",
+      "historical_version": "4.16.0",
+      "installed_review_version": "4.16.0",
+      "metadata_license": "PSF-2.0",
+      "status": "METADATA_ONLY_NOT_RIGHTS_CERTIFICATION"
+    }
+  ]
+}
