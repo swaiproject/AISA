@@ -1,4 +1,5 @@
-DRAFT ONLY — NOT AN ACTIVE LICENCE. Remove this heading only after owner approval.
+Historical proposal retained for traceability. The owner approved MIT on 22 October 2026. The active licence is the repository-root LICENSE file.
+
 MIT License
 
 Copyright (c) 2026 Sebastian Weerakkody

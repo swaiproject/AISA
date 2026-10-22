@@ -34,6 +34,12 @@ python tools/verify_publication.py
 python tools/verify_offline.py
 ```
 
-The default public workflow makes no hosted API calls. No credential is required. Source is provided for inspection; the licence decision is pending. See LICENSE before redistribution.
+The default public workflow makes no hosted API calls. No credential is required. AISA is released under the MIT licence. See [LICENSE](LICENSE). Third-party dependencies retain their own licences.
 
 Selected live evidence dates from 16 October 2026. Historical hosted model identifiers are recorded for traceability, not promised as currently available services. New hosted qualification is separate work.
+
+## Feedback and support
+
+AISA is a personal proof-of-concept project shared for inspection and experimentation. Support and ongoing maintenance are not provided. Technical feedback is welcome through [GitHub Issues](https://github.com/swaiproject/AISA/issues), but responses are at the author’s discretion and are not guaranteed.
+
+Feedback on the architecture, weaknesses, missing tests, reproducibility and the evidence needed for further evaluation is particularly welcome. Please do not post credentials or personal information in issues. No private email contact is published.

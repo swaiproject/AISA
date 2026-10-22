@@ -3,9 +3,9 @@
 Prepared package; nothing has been uploaded publicly.
 
 1. Confirm creator display name Sebastian Weerakkody and rights to the included code/docs.
-2. Approve a licence. MIT text is provided as a proposal only; replace LICENSE and update CITATION.cff and platform metadata after approval.
+2. MIT licence approved by the owner on 22 October 2026. Root LICENSE and CITATION.cff updated; propagate MIT to the separate Zenodo and Hugging Face packages before publication.
 3. Review the privacy/redaction report and selected evidence. Confirm that event/run IDs and historical model outputs may be public.
-4. Create or select GitHub and Hugging Face accounts and repository names. No account names or URLs have been invented.
+4. GitHub repository selected: https://github.com/swaiproject/AISA (private at verification). Hugging Face account and Space remain to be selected.
 5. Run the offline verification in Ubuntu VMware and retain the result. Review the packaging verification's environment and limitations.
 6. Visually review the Space in a browser; only JavaScript DOM interaction was tested here because browser installation failed. Set the actual publication date; create the GitHub release/tag only after approval. Candidate identity is 1.0.0-rc1, not a claim that the original core became v1.0.
 7. Reserve the Zenodo DOI and insert actual repository/DOI links into citation metadata and the Space README. Rebuild hashes after any changes, verify, then publish.
@@ -20,3 +20,5 @@ Official platform references checked 19 October 2026:
 - https://help.zenodo.org/docs/github/archive-software/github-upload/
 - https://help.zenodo.org/docs/deposit/create-new-upload/
 - https://huggingface.co/docs/hub/spaces-sdks-static
+
+GitHub download verification on 22 October 2026: all 126 original package files matched byte for byte; the only additional file was .gitattributes containing `* -text`. Subsequent licence and documentation edits are recorded in docs/LICENSE-AND-FEEDBACK-UPDATE.md.

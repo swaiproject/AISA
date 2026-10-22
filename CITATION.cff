@@ -12,4 +12,6 @@ keywords:
   - action authorization
   - trusted controller
   - proof of concept
-# Licence, release date, repository URL and DOI deliberately omitted pending publication decisions.
+license: MIT
+repository-code: "https://github.com/swaiproject/AISA"
+# Release date and DOI remain unset until publication.
